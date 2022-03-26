@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: deso-message
+  name: hello-message
   namespace: circuit-breaker
   labels:
-    app: deso-message
+    app: hello-message
 spec:
   type: NodePort
   ports:
