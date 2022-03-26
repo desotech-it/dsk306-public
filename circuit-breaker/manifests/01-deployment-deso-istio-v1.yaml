@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: deso-istio-v1
-  namespace: deso-istio
+  namespace: circuit-breaker
 spec:
   selector:
     matchLabels:
