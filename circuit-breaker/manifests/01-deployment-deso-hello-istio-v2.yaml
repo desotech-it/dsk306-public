@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: deso-hello-istio-v2
-  namespace: deso-hello-istio
+  name: deso-istio-v2
+  namespace: deso-istio
 spec:
   selector:
     matchLabels:
-      app: deso-hello-istio
+      app: deso-istio
       version: v2
   replicas: 1
   template:
     metadata:
       labels:
-        app: deso-hello-istio
+        app: deso-istio
         version: v2
     spec:
       containers:
-      - name: deso-hello-istio
+      - name: deso-istio
         image: r.deso.tech/dsk/deso-istio:2.1.1
         imagePullPolicy: Always
         ports:
