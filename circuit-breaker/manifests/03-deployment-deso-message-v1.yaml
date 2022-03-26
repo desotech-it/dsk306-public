@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: deso-hello-message-v1
-  namespace: deso-hello-istio
+  name: deso-message-v1
+  namespace: deso-istio
 spec:
   selector:
     matchLabels:
-      app: deso-hello-message
+      app: deso-message
       version: v1
   replicas: 1
   template:
     metadata:
       labels:
-        app: deso-hello-message
+        app: deso-message
         version: v1
     spec:
       containers:
-      - name: deso-hello-message
+      - name: deso-message
         image: r.deso.tech/dsk/deso-message:1.1.1
         imagePullPolicy: Always
         ports:

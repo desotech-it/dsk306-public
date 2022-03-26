@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: deso-message
-  namespace: deso-hello-istio
+  namespace: deso-istio
   labels:
     app: deso-message
 spec:
