@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: deso-istio
+  name: hello-istio
   namespace: circuit-breaker
   labels:
-    app: deso-istio
+    app: hello-istio
 spec:
   type: NodePort
   ports:
