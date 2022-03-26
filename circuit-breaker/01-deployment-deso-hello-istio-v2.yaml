@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deso-hello-istio-v2
+  namespace: deso-hello-istio
+spec:
+  selector:
+    matchLabels:
+      app: deso-hello-istio
+      version: v2
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: deso-hello-istio
+        version: v2
+    spec:
+      containers:
+      - name: deso-hello-istio
+        image: r.deso.tech/dsk/deso-istio:2.1.1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            memory: "32Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "1000m"
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 10
+          periodSeconds: 10
